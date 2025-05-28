@@ -20,7 +20,7 @@ This project was developed during my front-end internship at **Esfahan Ahan Comp
 
 ## 📸 Preview
 
-*(You can add screenshots here if you'd like)*
+![Crypto UI Preview](./preview.gif)
 
 ---
 
