@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ccryptous</title>
+  <!-- logo -->
+  <link rel="icon" type="image/png" href="./Pics/Png/Title-Logo.png">
+  <link rel="stylesheet" href="./style/style.css" />
+</head>
+
+<body>
+  <!-- ?All icons -->
+  <svg class="hidden">
+    <symbol id="menu-bar" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </symbol>
+    <symbol id="close" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+    </symbol>
+    <symbol id="info" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M7.96875 14.2147C9.82527 14.2147 11.6057 13.4772 12.9185 12.1644C14.2313 10.8517 14.9688 9.07118 14.9688 7.21466C14.9688 5.35815 14.2313 3.57767 12.9185 2.26491C11.6057 0.952159 9.82527 0.214661 7.96875 0.214661C6.11223 0.214661 4.33176 0.952159 3.019 2.26491C1.70625 3.57767 0.96875 5.35815 0.96875 7.21466C0.96875 9.07118 1.70625 10.8517 3.019 12.1644C4.33176 13.4772 6.11223 14.2147 7.96875 14.2147ZM8.7825 5.97916L7.9075 10.096C7.84625 10.3935 7.93288 10.5624 8.1735 10.5624C8.34325 10.5624 8.59963 10.5012 8.77375 10.3472L8.69675 10.7112C8.44562 11.0139 7.89175 11.2344 7.41488 11.2344C6.79975 11.2344 6.53813 10.8652 6.70788 10.0803L7.35362 7.04579C7.40963 6.78941 7.35888 6.69666 7.1025 6.63454L6.70788 6.56366L6.77962 6.23029L8.78337 5.97916H8.7825ZM7.96875 5.02716C7.73669 5.02716 7.51413 4.93497 7.35003 4.77088C7.18594 4.60678 7.09375 4.38422 7.09375 4.15216C7.09375 3.9201 7.18594 3.69754 7.35003 3.53344C7.51413 3.36935 7.73669 3.27716 7.96875 3.27716C8.20081 3.27716 8.42337 3.36935 8.58747 3.53344C8.75156 3.69754 8.84375 3.9201 8.84375 4.15216C8.84375 4.38422 8.75156 4.60678 8.58747 4.77088C8.42337 4.93497 8.20081 5.02716 7.96875 5.02716Z"
+        fill="#BDBDBD" />
+    </symbol>
+    <symbol id="star" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M6.79468 0.366577L4.79468 4.36658L0.794678 4.86658L3.54801 7.94658L2.79468 12.3666L6.79468 10.3666L10.7947 12.3666L10.048 7.94658L12.7947 4.86658L8.79468 4.36658L6.79468 0.366577ZM6.79468 1.85991L8.35468 4.98658L11.4547 5.37324L9.33468 7.74658L9.91468 11.1799L6.79468 9.61991L3.67468 11.1799L4.25468 7.74658L2.13468 5.37324L5.23468 4.98658L6.79468 1.85991Z"
+        fill="#BDBDBD" />
+    </symbol>
+    <symbol id="vector" viewBox="0 0 7 7" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.25548 0.366577L0.0480957 6.36658H6.46286L3.25548 0.366577Z" />
+    </symbol>
+    <symbol id="dots" viewBox="0 0 3 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3 11.7325C3 12.1303 2.84196 12.5118 2.56066 12.7931C2.27936 13.0744 1.89782 13.2325 1.5 13.2325C1.10218 13.2325 0.720644 13.0744 0.43934 12.7931C0.158035 12.5118 0 12.1303 0 11.7325C0 11.3347 0.158035 10.9531 0.43934 10.6718C0.720644 10.3905 1.10218 10.2325 1.5 10.2325C1.89782 10.2325 2.27936 10.3905 2.56066 10.6718C2.84196 10.9531 3 11.3347 3 11.7325ZM3 6.73248C3 7.13031 2.84196 7.51184 2.56066 7.79314C2.27936 8.07445 1.89782 8.23248 1.5 8.23248C1.10218 8.23248 0.720644 8.07445 0.43934 7.79314C0.158035 7.51184 0 7.13031 0 6.73248C0 6.33466 0.158035 5.95313 0.43934 5.67182C0.720644 5.39052 1.10218 5.23248 1.5 5.23248C1.89782 5.23248 2.27936 5.39052 2.56066 5.67182C2.84196 5.95313 3 6.33466 3 6.73248ZM3 1.73248C3 2.13031 2.84196 2.51184 2.56066 2.79314C2.27936 3.07445 1.89782 3.23248 1.5 3.23248C1.10218 3.23248 0.720644 3.07445 0.43934 2.79314C0.158035 2.51184 0 2.13031 0 1.73248C0 1.33466 0.158035 0.953127 0.43934 0.671823C0.720644 0.390518 1.10218 0.232483 1.5 0.232483C1.89782 0.232483 2.27936 0.390518 2.56066 0.671823C2.84196 0.953127 3 1.33466 3 1.73248Z"
+        fill="white" />
+    </symbol>
+    <symbol id="date" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M2.8824 0C2.97522 0 3.06425 0.0368749 3.12989 0.102513C3.19552 0.16815 3.2324 0.257174 3.2324 0.35V1.0045H6.9909V0.3545C6.9909 0.261674 7.02777 0.17265 7.09341 0.107013C7.15905 0.0413749 7.24807 0.0045 7.3409 0.0045C7.43372 0.0045 7.52275 0.0413749 7.58839 0.107013C7.65402 0.17265 7.6909 0.261674 7.6909 0.3545V1.0045H9.0459C9.31103 1.0045 9.56531 1.10979 9.75283 1.29722C9.94035 1.48464 10.0458 1.73887 10.0459 2.004V9.0005C10.0458 9.26563 9.94035 9.51986 9.75283 9.70728C9.56531 9.89471 9.31103 10 9.0459 10H1.0459C0.780769 10 0.52649 9.89471 0.338968 9.70728C0.151446 9.51986 0.046031 9.26563 0.0458984 9.0005L0.0458984 2.004C0.046031 1.73887 0.151446 1.48464 0.338968 1.29722C0.52649 1.10979 0.780769 1.0045 1.0459 1.0045H2.5324V0.3495C2.53253 0.256761 2.56946 0.167865 2.63509 0.102336C2.70071 0.0368062 2.78966 -9.46317e-08 2.8824 0V0ZM0.745898 3.871V9.0005C0.745898 9.0399 0.753658 9.07891 0.768735 9.1153C0.783811 9.1517 0.805909 9.18477 0.833766 9.21263C0.861624 9.24049 0.894696 9.26259 0.931093 9.27766C0.967491 9.29274 1.0065 9.3005 1.0459 9.3005H9.0459C9.08529 9.3005 9.12431 9.29274 9.1607 9.27766C9.1971 9.26259 9.23017 9.24049 9.25803 9.21263C9.28589 9.18477 9.30799 9.1517 9.32306 9.1153C9.33814 9.07891 9.3459 9.0399 9.3459 9.0005V3.878L0.745898 3.871ZM3.3794 7.3095V8.1425H2.5459V7.3095H3.3794ZM5.4624 7.3095V8.1425H4.6294V7.3095H5.4624ZM7.5459 7.3095V8.1425H6.7124V7.3095H7.5459ZM3.3794 5.321V6.154H2.5459V5.321H3.3794ZM5.4624 5.321V6.154H4.6294V5.321H5.4624ZM7.5459 5.321V6.154H6.7124V5.321H7.5459ZM2.5324 1.704H1.0459C1.0065 1.704 0.967491 1.71176 0.931093 1.72684C0.894696 1.74191 0.861624 1.76401 0.833766 1.79187C0.805909 1.81973 0.783811 1.8528 0.768735 1.88919C0.753658 1.92559 0.745898 1.9646 0.745898 2.004V3.1715L9.3459 3.1785V2.004C9.3459 1.9646 9.33814 1.92559 9.32306 1.88919C9.30799 1.8528 9.28589 1.81973 9.25803 1.79187C9.23017 1.76401 9.1971 1.74191 9.1607 1.72684C9.12431 1.71176 9.08529 1.704 9.0459 1.704H7.6909V2.1685C7.6909 2.26133 7.65402 2.35035 7.58839 2.41599C7.52275 2.48163 7.43372 2.5185 7.3409 2.5185C7.24807 2.5185 7.15905 2.48163 7.09341 2.41599C7.02777 2.35035 6.9909 2.26133 6.9909 2.1685V1.704H3.2324V2.164C3.2324 2.25683 3.19552 2.34585 3.12989 2.41149C3.06425 2.47713 2.97522 2.514 2.8824 2.514C2.78957 2.514 2.70055 2.47713 2.63491 2.41149C2.56927 2.34585 2.5324 2.25683 2.5324 2.164V1.704Z"
+        fill="#616161" />
+    </symbol>
+    <symbol id="clock" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5.09815 10C4.10924 10 3.14254 9.70676 2.32029 9.15735C1.49805 8.60794 0.857187 7.82705 0.478749 6.91342C0.100311 5.99979 0.0012943 4.99445 0.19422 4.02455C0.387146 3.05465 0.86335 2.16373 1.56261 1.46447C2.26187 0.765206 3.15279 0.289002 4.12269 0.0960758C5.0926 -0.0968502 6.09793 0.00216642 7.01156 0.380604C7.92519 0.759043 8.70609 1.3999 9.25549 2.22215C9.8049 3.0444 10.0981 4.0111 10.0981 5C10.0981 6.32608 9.57136 7.59785 8.63368 8.53553C7.696 9.47322 6.42423 10 5.09815 10ZM5.09815 0.714288C4.25051 0.714288 3.42191 0.96564 2.71713 1.43656C2.01235 1.90748 1.46304 2.57682 1.13866 3.35993C0.814287 4.14304 0.729416 5.00476 0.894781 5.8361C1.06015 6.66745 1.46832 7.43109 2.06769 8.03046C2.66706 8.62983 3.4307 9.038 4.26204 9.20337C5.09339 9.36873 5.95511 9.28386 6.73822 8.95948C7.52133 8.63511 8.19067 8.0858 8.66159 7.38102C9.13251 6.67623 9.38386 5.84764 9.38386 5C9.38386 3.86336 8.93233 2.77327 8.1286 1.96954C7.32487 1.16582 6.23479 0.714288 5.09815 0.714288Z"
+        fill="#616161" />
+      <path d="M6.73764 7.14279L4.74121 5.14636V1.78564H5.4555V4.84993L7.24121 6.63922L6.73764 7.14279Z"
+        fill="#616161" />
+    </symbol>
+    <symbol id="facebook" class="icon-svg" viewBox="0 0 7 13" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M6.23218 0.112307H4.8415C4.49245 0.0901313 4.1432 0.152023 3.81737 0.2938C3.49154 0.435576 3.19672 0.653935 2.95282 0.934118C2.70892 1.2143 2.52164 1.54978 2.40362 1.91789C2.2856 2.28599 2.2396 2.67815 2.26873 3.06785V4.42895H0.869701C0.811795 4.42895 0.756271 4.45468 0.715325 4.50048C0.674379 4.54628 0.651367 4.6084 0.651367 4.67317V6.64172C0.651551 6.70642 0.674609 6.76842 0.715516 6.81418C0.756422 6.85994 0.811851 6.88573 0.869701 6.88594H2.26873V11.8637C2.26891 11.9285 2.29207 11.9906 2.33313 12.0364C2.37419 12.0822 2.42979 12.1079 2.48776 12.1079H4.31165C4.36962 12.1079 4.42523 12.0822 4.46628 12.0364C4.50734 11.9906 4.5305 11.9285 4.53069 11.8637V6.88594H6.16543C6.22333 6.88594 6.27888 6.86021 6.31982 6.81441C6.36077 6.76861 6.38376 6.70649 6.38376 6.64172V4.66773C6.38352 4.60301 6.36056 4.541 6.3198 4.49506C6.29945 4.47229 6.27526 4.45424 6.24865 4.44196C6.22204 4.42968 6.19351 4.42341 6.16473 4.42351H4.52929V3.26929C4.52929 2.71474 4.6475 2.43318 5.29417 2.43318H6.23148C6.28939 2.43318 6.34494 2.40745 6.38588 2.36165C6.42683 2.31585 6.44982 2.25373 6.44982 2.18896V0.357305C6.44982 0.292596 6.42693 0.230514 6.38616 0.184612C6.34538 0.13871 6.29003 0.112718 6.23218 0.112307Z" />
+    </symbol>
+    <symbol id="twiter" class="icon-svg" viewBox="0 0 14 11" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M13.0759 1.39717C12.5906 1.62027 12.0756 1.76687 11.5483 1.83206C12.1039 1.48714 12.52 0.945616 12.7195 0.307712C12.196 0.62933 11.623 0.855271 11.0254 0.975633C10.6604 0.573602 10.187 0.294352 9.66669 0.174101C9.14638 0.0538505 8.60315 0.0981504 8.10747 0.301251C7.61179 0.504352 7.18652 0.856883 6.88682 1.31312C6.58712 1.76936 6.42682 2.30826 6.42671 2.85992C6.42698 3.07092 6.44983 3.28124 6.49484 3.48703C5.43678 3.43249 4.40164 3.14827 3.45664 2.65283C2.51165 2.15739 1.67793 1.4618 1.00964 0.611246C0.669152 1.2169 0.564693 1.93411 0.717547 2.61669C0.870401 3.29928 1.26906 3.89586 1.83228 4.28483C1.41047 4.27219 0.997844 4.15431 0.629518 3.94122V3.97461C0.629815 4.60987 0.841884 5.22559 1.22994 5.71785C1.618 6.21011 2.15828 6.54879 2.75963 6.67673C2.53116 6.73895 2.29588 6.77038 2.05963 6.77024C1.89119 6.77047 1.7231 6.75432 1.55758 6.722C1.72823 7.26858 2.0593 7.74651 2.50471 8.08929C2.95013 8.43207 3.48773 8.62264 4.04271 8.63449C3.0994 9.39827 1.93559 9.81224 0.737817 9.81003C0.526696 9.80976 0.315752 9.79738 0.105957 9.77293C1.24937 10.5306 2.56873 10.956 3.92569 11.0045C5.28265 11.053 6.62722 10.7228 7.81843 10.0485C9.00963 9.37429 10.0036 8.38082 10.696 7.17231C11.3885 5.96379 11.754 4.58475 11.7541 3.17978L11.7462 2.82356C12.2688 2.43486 12.7195 1.95194 13.0767 1.39791L13.0759 1.39717Z" />
+    </symbol>
+    <symbol id="linkdin" class="icon-svg" viewBox="0 0 12 13" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M2.04946 0.607911H2.04907C1.9343 0.60782 1.82021 0.631105 1.71317 0.6769C1.60608 0.722712 1.50763 0.790388 1.42391 0.876925C1.34015 0.963498 1.27282 1.06722 1.22658 1.18258C1.18035 1.29792 1.15632 1.4221 1.15625 1.54791L2.04946 0.607911ZM2.04946 0.607911C2.16419 0.607911 2.27822 0.631282 2.38519 0.677156C2.49221 0.723048 2.59057 0.790795 2.67419 0.877389C2.75785 0.964019 2.82505 1.06778 2.87116 1.18316C2.91729 1.29857 2.94118 1.42281 2.94109 1.54864V1.549M2.04946 0.607911L2.94109 1.549M2.94109 1.549C2.94109 2.09073 2.51875 2.50427 2.04788 2.50427C1.57883 2.50427 1.15634 2.09158 1.15625 1.54809L2.94109 1.549ZM6.68506 5.68827H6.9911L7.13032 5.41573C7.38145 4.92413 7.89426 4.42609 8.84524 4.42609C9.93491 4.42609 10.4693 4.77875 10.7723 5.27113C11.1095 5.81918 11.226 6.63973 11.226 7.70718V11.6079H9.82388V8.20791V8.1974C9.82389 7.75473 9.82391 7.13226 9.62791 6.62004C9.52391 6.34826 9.3556 6.07968 9.08168 5.88196C8.80544 5.68257 8.46525 5.58664 8.07405 5.58664C7.69483 5.58664 7.35999 5.6635 7.08013 5.83342C6.7969 6.00539 6.60918 6.24892 6.48777 6.51445C6.26023 7.0121 6.24831 7.63599 6.24831 8.14191V11.6079H4.84617V4.59573H6.15132V5.18827V5.68827H6.65132H6.68506ZM2.75132 11.6079H1.3476V4.59518H2.75132V11.6079Z" />
+    </symbol>
+    <symbol id="instagram" class="icon-svg" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M13.7221 4.24651L13.7222 4.25742L13.7228 4.26831C13.7638 4.99373 13.764 5.2202 13.7655 7.1124L13.7655 7.11878C13.7655 7.11891 13.7655 7.11904 13.7655 7.11917C13.7655 9.01143 13.7558 9.2402 13.724 9.97668L13.7238 9.97667L13.7236 9.98858C13.7134 10.5147 13.6179 11.0321 13.4402 11.5225C13.2899 11.9221 13.0615 12.2839 12.7703 12.5852C12.4791 12.8865 12.1317 13.1208 11.7506 13.2742C11.2809 13.4563 10.7852 13.5543 10.2845 13.5646L10.2744 13.5648L10.2644 13.5654C9.56595 13.6077 9.34686 13.6079 7.51191 13.6079C5.684 13.6079 5.46374 13.5979 4.75224 13.565L4.75224 13.5649L4.74616 13.5647C4.24355 13.5476 3.7471 13.4419 3.27809 13.2518L3.27615 13.251C2.89393 13.0979 2.54549 12.8635 2.25364 12.5618C1.96235 12.2606 1.73388 11.8989 1.58371 11.4994C1.40589 11.0081 1.31039 10.4905 1.30021 9.96528L1.30003 9.95599L1.29951 9.94671C1.25845 9.22141 1.2583 8.99387 1.2583 7.09549C1.2583 5.20366 1.26802 4.97489 1.29984 4.23757L1.29999 4.23758L1.30022 4.22515C1.3098 3.70122 1.40574 3.18312 1.58367 2.69325C1.73358 2.29344 1.96191 1.93155 2.25317 1.63016C2.54428 1.32893 2.8918 1.09481 3.27304 0.941684C3.74273 0.759567 4.23839 0.661205 4.73911 0.650483L4.74864 0.650279L4.75815 0.649712C5.45689 0.608072 5.67627 0.60791 7.51116 0.60791C9.3395 0.60791 9.55958 0.617203 10.2701 0.650064L10.27 0.65022L10.2825 0.650485C10.7835 0.661128 11.2793 0.75948 11.7492 0.941655C12.1304 1.0949 12.4779 1.32908 12.769 1.63032C13.0603 1.93174 13.2887 2.29366 13.4387 2.69348C13.6193 3.18991 13.7152 3.71543 13.7221 4.24651ZM10.1808 2.43199L10.5404 2.77945L10.1808 2.43199C10.0602 2.55681 9.96539 2.70407 9.90099 2.86495C9.8366 3.0258 9.80366 3.19764 9.80366 3.3708C9.80366 3.52494 9.82956 3.67418 9.87749 3.81358C9.19793 3.2918 8.36785 3.00352 7.50666 3.00352C5.29888 3.00352 3.5391 4.84945 3.5391 7.09161C3.5391 9.33377 5.29888 11.1797 7.50666 11.1797C8.56454 11.1797 9.57549 10.7447 10.3181 9.97624C11.0602 9.20836 11.4742 8.17043 11.4742 7.09161C11.4742 6.20096 11.192 5.33817 10.676 4.63221C10.8116 4.68086 10.9582 4.70748 11.1122 4.70748C11.8509 4.70748 12.4201 4.09297 12.4201 3.3708C12.4201 3.19764 12.3871 3.0258 12.3227 2.86495C12.2583 2.70408 12.1635 2.55681 12.0429 2.43199C11.9222 2.30713 11.778 2.20715 11.6181 2.1386C11.4581 2.07004 11.2861 2.03451 11.1119 2.03451C10.9376 2.03451 10.7656 2.07004 10.6056 2.1386C10.4457 2.20715 10.3015 2.30714 10.1808 2.43199Z" />
+    </symbol>
+  </svg>
+
+  <!-- header -->
+  <header id="header">
+    <section id="header-top">
+      <div class="container">
+        <div class="header-top flex justify-between align-center">
+          <!-- logo -->
+          <div class="logo center">
+            <a class="logo__link" href="#">
+              <img class="logo__img" src="./Pics/Png/logo.png" alt="logo" />
+            </a>
+          </div>
+          <!-- menu bar -->
+          <div class="menu-bar center lg-hidden transition-opacity" onclick="openMenuClick()">
+            <svg class="open-menu">
+              <use href="#menu-bar"></use>
+            </svg>
+          </div>
+          <!-- nav menu -->
+          <nav class="nav transition-transform">
+            <div class="mobile-menu__top flex align-center justify-between lg-hidden">
+              <!-- trade btn - mobile -->
+              <button class="trade-button transition-color">
+                <a class="trade-button__link poppins-17-medium center" href="#">
+                  Trade Now
+                </a>
+              </button>
+              <!-- close icon - mobile -->
+              <svg class="close-menu" onclick="closeMenuClick()">
+                <use href="#close"></use>
+              </svg>
+            </div>
+            <ul class="nav-ul flex poppins-17-regular">
+              <li class="transition-opacity"><a href="#">Home</a></li>
+              <li class="transition-opacity"><a href="#">Company</a></li>
+              <li class="transition-opacity"><a href="#">About</a></li>
+              <li class="transition-opacity"><a href="#">Pricing</a></li>
+              <li class="transition-opacity"><a href="#">Team</a></li>
+              <li class="transition-opacity"><a href="#">Contact</a></li>
+              <li class="transition-opacity"><a href="#">Blog</a></li>
+            </ul>
+          </nav>
+          <!-- trade now button -->
+          <button class="trade-button hidden lg-block transition-color">
+            <a class="trade-button__link poppins-17-medium center" href="#">
+              Trade Now
+            </a>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="header-bottom">
+      <div class="container">
+        <div class="header-bottom md-flex">
+          <!-- busenees title -->
+          <div class="busenees">
+            <h1 class="busenees__title poppins-24-bold">
+              Make better businees with Cryptocurrency
+            </h1>
+            <p class="busenees__info inter-16-regular">
+              We offers users a fully operational long-term rental platform.
+              It plans to leverages blockchain technology.
+            </p>
+            <a class="busenees__link btn center poppins-14-medium transition-opacity" href="#">
+              Get Whitelisted
+            </a>
+          </div>
+          <!-- busenees img -->
+          <div class="busenees__img hidden md-block">
+            <img class="transition-all transition-delay-0 " src="./Pics/Png/illustration.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="scrool hidden lg-block">
+      <img src="./Pics/Png/scrool.png" alt="scrool" />
+    </div>
+  </header>
+
+  <!-- Main  -->
+  <main id="main">
+    <!-- section daily-pricees  -->
+    <section id="daily-pricees">
+      <div class="container">
+        <h2 class="daily-pricees__title poppins-20-bold">
+          Today's Cryptocurrency Prices
+        </h2>
+        <!-- table -->
+        <table id="table">
+          <thead id="table-head" class="inter-14-medium">
+            <tr class="thead-row">
+              <th class="thead-number hidden sm-table-cell">
+                <div class="thead-number__flex flex">
+                  <span>#</span>
+                  <svg class="vector-svg-title white">
+                    <use href="#vector"></use>
+                  </svg>
+                </div>
+              </th>
+              <th class="thead-name">Name</th>
+              <th class="thead-price hidden xsm-table-cell">price</th>
+              <th class="thead-daily hidden sm-table-cell">24h %</th>
+              <th class="thead-weekly hidden lg-table-cell">7d %</th>
+              <th class="thead-info hidden lg-table-cell">
+                <div class="thead-info__flex center">
+                  <span>market cap</span>
+                  <svg class="info-svg">
+                    <use href="#info"></use>
+                  </svg>
+                </div>
+              </th>
+              <th class="thead-volume">volume(24h)</th>
+              <th class="thead-chart hidden md-table-cell">last 7 days</th>
+            </tr>
+          </thead>
+          <!-- tbody -->
+          <tbody id="table-body">
+            <!-- Data loaded from js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Trusted Crypto -->
+    <section id="trusted-crypto">
+      <div class="container">
+        <h2 class="trusted-crypto__title poppins-20-bold">
+          The most trusted cryptocurrency platform
+        </h2>
+        <!-- platforms -->
+        <div class="platforms">
+          <!-- first platform -->
+          <div class="platform flex">
+            <a href="#">
+              <img class="platform__img" src="./Pics/Png/icon-1.png" alt="icon-1" />
+            </a>
+            <a href="#">
+              <h4 class="platform__title inter-18-semibold">
+                Ease of Trading
+              </h4>
+            </a>
+            <p class="platform__option inter-14-regular">
+              Intuitive interface
+            </p>
+            <p class="platform__option inter-14-regular">
+              Instant deposit options
+            </p>
+            <p class="platform__option inter-14-regular">
+              Cash out directly to your bank account
+            </p>
+          </div>
+          <!-- secont platform -->
+          <div class="platform flex">
+            <a href="#">
+              <img class="platform__img" src="./Pics/Png/icon-2.png" alt="icon-2" />
+            </a>
+            <a href="#">
+              <h4 class="platform__title inter-18-semibold">
+                Institutional-grade Security
+              </h4>
+            </a>
+            <p class="platform__option inter-14-regular">
+              98% of assets stored safely offline
+            </p>
+            <p class="platform__option inter-14-regular">
+              Highly encrypted personal data
+            </p>
+            <p class="platform__option inter-14-regular">
+              Whitelisting and transaction confirmations
+            </p>
+          </div>
+          <!-- thirt platform -->
+          <div class="platform flex">
+            <a href="#">
+              <img class="platform__img" src="./Pics/Png/icon-3.png" alt="icon-3" />
+            </a>
+            <a href="">
+              <h4 class="platform__title inter-18-semibold">
+                Proven Reliability
+              </h4>
+            </a>
+            <p class="platform__option inter-14-regular">
+              Exchanging bitcoin since 2011
+            </p>
+            <p class="platform__option inter-14-regular">
+              Industry-leading uptime
+            </p>
+            <p class="platform__option inter-14-regular">
+              24/7 dedicated support
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- app -->
+    <section id="app">
+      <div class="container">
+        <div class="app-wrapper-grid">
+          <div class="app-info">
+            <h2 class="app-info__title poppins-20-bold">
+              Try the future, today.
+              <br />
+              Download Crypto
+            </h2>
+            <p class="app-info__descript inter-14-lh-24-regular">
+              Stay connected to the market with our mobile app. Featuring
+              advanced order types and analytical tools for experienced
+              traders, as well as a simple buy & sell interface for those just
+              getting started.
+            </p>
+          </div>
+          <div class="app-img">
+            <img class="transition-all transition-delay-0 " src="./Pics/Png/app.png" alt="app" />
+          </div>
+          <div class="app-links flex">
+            <a class="app-link" href="#">
+              <img class="transition-transform" src="./Pics/Png/app-stor.png" alt="app store" />
+            </a>
+            <a class="app-link" href="#">
+              <img class="transition-transform" src="./Pics/Png/Google.png" alt="google" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learn to thrive -->
+    <section id="learn-thrive">
+      <div class="container">
+        <h2 class="learn-thrive__title poppins-32-semibold">
+          Learn to thrive
+        </h2>
+        <!-- grid -->
+        <div class="learn-thrive-grid">
+          <!-- item -->
+          <div class="learn-thrive-item">
+            <div class="learn-thrive-img w-full">
+              <a href="#" class="w-full h-full">
+                <img class="transition-transform" src="./Pics/Png/thrive-img-1.png" alt="thrive img 1" />
+              </a>
+            </div>
+            <div class="learn-thrive__article">
+              <a href="#">
+                <h3 class="learn-thrive__article__title line-clamp poppins-16-medium">
+                  New Leveraged Pairs Added to Margin Trading on the
+                  Crypto.com Exchange
+                </h3>
+              </a>
+              <p class="learn-thrive__article__descript line-clamp open-sans-14-regular">
+                We urge everyone adopt good cybersecurity habits, and to have
+                unique passwords on every site they use...
+              </p>
+            </div>
+            <div class="learn-thrive__article__writer flex justify-between align-center open-sans-12-regular">
+              <span class="writer-name line-clamp">By: Jennia Peris</span>
+              <div class="writer-date center">
+                <svg>
+                  <use href="#date"></use>
+                </svg>
+                <span>15/07/2021</span>
+              </div>
+              <div class="writer-time center">
+                <svg>
+                  <use href="#clock"></use>
+                </svg>
+                <span>5 Min to read</span>
+              </div>
+            </div>
+          </div>
+          <!-- item -->
+          <div class="learn-thrive-item">
+            <div class="learn-thrive-img w-full">
+              <a href="#" class="w-full h-full">
+                <img class="transition-transform" src="./Pics/Png/thrive-img-2.png" alt="thrive img 2" />
+              </a>
+            </div>
+            <div class="learn-thrive__article">
+              <a href="#">
+                <h3 class="learn-thrive__article__title line-clamp poppins-16-medium">
+                  New Leveraged Pairs Added to Margin Trading on the
+                  Crypto.com Exchange
+                </h3>
+              </a>
+              <p class="learn-thrive__article__descript line-clamp open-sans-14-regular">
+                We urge everyone adopt good cybersecurity habits, and to have
+                unique passwords on every site they use...
+              </p>
+            </div>
+            <div class="learn-thrive__article__writer flex justify-between align-center open-sans-12-regular">
+              <span class="writer-name line-clamp">By: Jennia Peris</span>
+              <div class="writer-date center">
+                <svg>
+                  <use href="#date"></use>
+                </svg>
+                <span>15/07/2021</span>
+              </div>
+              <div class="writer-time center">
+                <svg>
+                  <use href="#clock"></use>
+                </svg>
+                <span>5 Min to read</span>
+              </div>
+            </div>
+          </div>
+          <!-- item -->
+          <div class="learn-thrive-item">
+            <div class="learn-thrive-img w-full">
+              <a href="#" class="w-full h-full">
+                <img class="transition-transform" src="./Pics/Png/thrive-img-3.png" alt="thrive img 3" />
+              </a>
+            </div>
+            <div class="learn-thrive__article">
+              <a href="#">
+                <h3 class="learn-thrive__article__title line-clamp poppins-16-medium">
+                  New Leveraged Pairs Added to Margin Trading on the
+                  Crypto.com Exchange
+                </h3>
+              </a>
+              <p class="learn-thrive__article__descript line-clamp open-sans-14-regular">
+                We urge everyone adopt good cybersecurity habits, and to have
+                unique passwords on every site they use...
+              </p>
+            </div>
+            <div class="learn-thrive__article__writer flex justify-between align-center open-sans-12-regular">
+              <span class="writer-name line-clamp">By: Jennia Peris</span>
+              <div class="writer-date center">
+                <svg>
+                  <use href="#date"></use>
+                </svg>
+                <span>15/07/2021</span>
+              </div>
+              <div class="writer-time center">
+                <svg>
+                  <use href="#clock"></use>
+                </svg>
+                <span>5 Min to read</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- search -->
+    <section id="search">
+      <div class="container">
+        <div class="search-wrapper center">
+          <h2 class="search-title poppins-24-bold">Never miss a drop</h2>
+          <p class="search-descript inter-14-lh-24-regular">
+            Subscribe for the latest news, drops & collectibles
+          </p>
+          <!-- search box -->
+          <div class="search-box flex justify-between align-center">
+            <input class="search-input inter-12-regular" type="text" placeholder="Enter your email address" />
+            <a class="search-btn center btn poppins-14-medium transition-opacity" href="#">
+              Subscribe
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <section class="footer-top">
+      <div class="container">
+        <!-- grid -->
+        <div class="footer-grid">
+          <!-- link -->
+          <div class="footer-links">
+            <h3 class="footer-links__header inter-18-semibold">Company</h3>
+            <ul class="footer-links-wrapper flex">
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">About us</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Terms of use</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Privacy Policy</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Disclaimer</a>
+              </li>
+            </ul>
+          </div>
+          <!-- link -->
+          <div class="footer-links">
+            <h3 class="footer-links__header inter-18-semibold">Businesses</h3>
+            <ul class="footer-links-wrapper flex">
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Prime</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Custody</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Asset Hub</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Commerce</a>
+              </li>
+            </ul>
+          </div>
+          <!-- link -->
+          <div class="footer-links">
+            <h3 class="footer-links__header inter-18-semibold">Blockchain</h3>
+            <ul class="footer-links-wrapper flex">
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Chain Explorer</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">The Syndicate</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Security</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Cryptous Credit</a>
+              </li>
+            </ul>
+          </div>
+          <!-- link -->
+          <div class="footer-links">
+            <h3 class="footer-links__header inter-18-semibold">Exchange</h3>
+            <ul class="footer-links-wrapper flex">
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Exchange Home</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Margin Trading</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Derivatives Trading</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Trading Arena</a>
+              </li>
+            </ul>
+          </div>
+          <!-- link -->
+          <div class="footer-links">
+            <h3 class="footer-links__header inter-18-semibold">Resources</h3>
+            <ul class="footer-links-wrapper flex">
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Prices</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Site Widgets</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Tax</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Blog</a>
+              </li>
+              <li class="transition-opacity">
+                <a class="footer-link inter-14-regular" href="#">Research</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__flex flex align-center">
+          <p class="copyright inter-14-regular">Copyright 2021, Cryptous</p>
+          <div class="icon-flex flex align-center justify-between">
+            <a href="#" class="icon-svg center transition-all transition-delay-0 ">
+              <svg class="facebook">
+                <use href="#facebook"></use>
+              </svg>
+            </a>
+            <a class="icon-svg center transition-all transition-delay-0 " href="#">
+              <svg class="twiter">
+                <use href="#twiter"></use>
+              </svg>
+            </a>
+            <a class="icon-svg center transition-all transition-delay-0 " href="#">
+              <svg class="linkdin">
+                <use href="#linkdin"></use>
+              </svg>
+            </a>
+            <a class="icon-svg center transition-all transition-delay-0 " href="#">
+              <svg class="instagram">
+                <use href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <div class="overaly hidden lg-hidden" onclick="overalyClick()"></div>
+
+  <script src="./source/app.js"></script>
+</body>
+
+</html>
