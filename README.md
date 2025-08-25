@@ -23,5 +23,3 @@ This project was developed during my front-end internship at **Esfahan Ahan Comp
 ![Crypto UI Preview](./preview.gif)
 
 ---
-
-Feel free to fork or use this UI template for educational or design purposes.
